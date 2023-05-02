@@ -8,13 +8,8 @@ app.get('/', (req, res) => {
 
 app.get('/mean', (req, res) => {
   const numsQuery = req.query.nums;
-  const numsString = numsQuery.replace(/\D/g, '');
-  const nums = [];
+  const nums = numsQuery.split(',');
   let numSum = 0;
-
-  for (let num of numsString) {
-    nums.push(num);
-  }
 
   for (let item of nums) {
     numSum = numSum + Number(item);
