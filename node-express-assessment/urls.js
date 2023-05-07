@@ -4,11 +4,28 @@ const axios = require("axios");
 
 async function fetchData(url) {
   try {
-    const { status } = await axios.get(url);
+    const { data } = await axios.get(url);
 
-    return status;
+    return data;
   } catch (err) {
-    // console.log(err);
+    console.log(err);
+  }
+}
+
+function saveFile(fileName, content) {
+  const file = `./files/${fileName
+    .replace(/(^\w+:|^)\/\//, "")
+    .split("/")
+    .pop()}`;
+
+  console.log(file);
+
+  try {
+    fs.writeFileSync(file, content);
+    console.log(`File ${file} successfully saved!`);
+  } catch (error) {
+    console.error(`File write failed: ${error}`);
+    process.exit(1);
   }
 }
 
@@ -24,10 +41,7 @@ function cat(path) {
     console.log(array);
 
     for (let item of array) {
-      console.log(
-        "HHHEEEEERRRRRRREEEEEEEEEEEEEE//////////////////////////",
-        await fetchData(item)
-      );
+      saveFile(item, await fetchData(item));
     }
   });
 }
