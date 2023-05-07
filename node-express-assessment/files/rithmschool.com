@@ -72,7 +72,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
 <link rel='stylesheet' id='contact-form-7-css' href='https://www.rithmschool.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.6' media='all' />
-<link rel='stylesheet' id='rithm-style-css' href='https://www.rithmschool.com/wp-content/themes/rithm/style.css?ver=1683484243' media='all' />
+<link rel='stylesheet' id='rithm-style-css' href='https://www.rithmschool.com/wp-content/themes/rithm/style.css?ver=1683484945' media='all' />
 <link rel='stylesheet' id='elementor-frontend-css' href='https://www.rithmschool.com/wp-content/uploads/elementor/css/custom-frontend-lite.min.css?ver=1683305100' media='all' />
 <link rel='stylesheet' id='elementor-post-328-css' href='https://www.rithmschool.com/wp-content/uploads/elementor/css/post-328.css?ver=1683305145' media='all' />
 <link rel='stylesheet' id='elementor-post-516-css' href='https://www.rithmschool.com/wp-content/uploads/elementor/css/post-516.css?ver=1683305145' media='all' />
@@ -474,7 +474,7 @@ window.VIDEOASK_EMBED_CONFIG = {
 				<div class="elementor-element elementor-element-932e8d5 elementor-widget__width-initial rithm-syllabus-form rithm-black-form rithm-form elementor-widget elementor-widget-shortcode" data-id="932e8d5" data-element_type="widget" data-widget_type="shortcode.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-shortcode">
-                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_3' ><div id='gf_3' class='gform_anchor' tabindex='-1'></div>
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_3' ><div id='gf_3' class='gform_anchor' tabindex='-1'></div>
                         <div class='gform_heading'>
                             <p class='gform_description'></p>
                         </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_3' id='gform_3'  action='/#gf_3' data-formid='3' >
@@ -1781,7 +1781,7 @@ gform.initializeOnLoaded( function() {gformInitSpinner( 3, 'https://www.rithmsch
 				<div class="elementor-element elementor-element-2b0bc44 rithm-form rithm-newsletter-form elementor-widget elementor-widget-shortcode" data-id="2b0bc44" data-element_type="widget" data-widget_type="shortcode.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-shortcode">
-                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_4' ><div id='gf_4' class='gform_anchor' tabindex='-1'></div>
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_4' ><div id='gf_4' class='gform_anchor' tabindex='-1'></div>
                         <div class='gform_heading'>
                             <p class='gform_description'></p>
                         </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_4' id='gform_4'  action='/#gf_4' data-formid='4' >
@@ -1889,7 +1889,7 @@ gform.initializeOnLoaded( function() {gformInitSpinner( 4, 'https://www.rithmsch
 				<div class="elementor-element elementor-element-8c86b55 rithm-black-form elementor-widget elementor-widget-text-editor" data-id="8c86b55" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
 							
-                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='1' id='gform_wrapper_3' ><div id='gf_3' class='gform_anchor' tabindex='-1'></div>
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='1' id='gform_wrapper_3' ><div id='gf_3' class='gform_anchor' tabindex='-1'></div>
                         <div class='gform_heading'>
                             <p class='gform_description'></p>
                         </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_3' id='gform_3'  action='/#gf_3' data-formid='3' >
@@ -1932,7 +1932,7 @@ var extcf7_conditional_settings = {"animitation_status":"on","animitation_in_tim
 var extcf7_redirection_settings = {"redirection_delay":"200"};
 </script>
 <script src='https://www.rithmschool.com/wp-content/plugins/extensions-for-cf7/assets/js/redirect.js?ver=2.0.9' id='extcf7-redirect-script-js'></script>
-<script src='https://www.rithmschool.com/wp-content/themes/rithm/script.js?ver=1683484243' id='rithm-script-js'></script>
+<script src='https://www.rithmschool.com/wp-content/themes/rithm/script.js?ver=1683484945' id='rithm-script-js'></script>
 <script src='https://www.rithmschool.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
 <script src='https://www.rithmschool.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
 <script src='https://www.rithmschool.com/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
@@ -1953,7 +1953,7 @@ var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"22a17c53
 <script src='https://www.rithmschool.com/wp-content/plugins/jet-engine/assets/lib/slick/slick.min.js?ver=1.8.1' id='jquery-slick-js'></script>
 <script src='https://www.rithmschool.com/wp-content/plugins/jet-engine/assets/lib/jet-plugins/jet-plugins.js?ver=1.1.0' id='jet-plugins-js'></script>
 <script id='jet-engine-frontend-js-extra'>
-var JetEngineSettings = {"ajaxurl":"https:\/\/www.rithmschool.com\/wp-admin\/admin-ajax.php","ajaxlisting":"https:\/\/www.rithmschool.com\/?nocache=1683484244","restNonce":"f0936ad816","hoverActionTimeout":"400","addedPostCSS":["328","516"]};
+var JetEngineSettings = {"ajaxurl":"https:\/\/www.rithmschool.com\/wp-admin\/admin-ajax.php","ajaxlisting":"https:\/\/www.rithmschool.com\/?nocache=1683484946","restNonce":"f0936ad816","hoverActionTimeout":"400","addedPostCSS":["328","516"]};
 </script>
 <script src='https://www.rithmschool.com/wp-content/plugins/jet-engine/assets/js/frontend.js?ver=3.1.4' id='jet-engine-frontend-js'></script>
 <script src='https://www.rithmschool.com/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1' id='jquery-numerator-js'></script>

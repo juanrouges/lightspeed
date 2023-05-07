@@ -8,7 +8,7 @@ async function fetchData(url) {
 
     return data;
   } catch (err) {
-    console.log(err);
+    console.log(`Failed to fetch ${url}`);
   }
 }
 
@@ -25,7 +25,7 @@ function saveFile(fileName, content) {
     console.log(`File ${file} successfully saved!`);
   } catch (error) {
     console.error(`File write failed: ${error}`);
-    process.exit(1);
+    // process.exit(1);
   }
 }
 
@@ -33,7 +33,7 @@ function cat(path) {
   fs.readFile(path, "utf8", async (err, data) => {
     if (err) {
       console.log("Error:", err);
-      process.exit(1);
+      // process.exit(1);
     }
 
     const array = data.split("\n");
