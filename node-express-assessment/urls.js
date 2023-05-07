@@ -25,7 +25,7 @@ function saveFile(fileName, content) {
     console.log(`File ${file} successfully saved!`);
   } catch (error) {
     console.error(`File write failed: ${error}`);
-    // process.exit(1);
+    process.exit(1);
   }
 }
 
