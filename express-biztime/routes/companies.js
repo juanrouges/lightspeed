@@ -54,4 +54,8 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.put('/:code', async (req, res) => {
+  return '';
+});
+
 module.exports = router;
