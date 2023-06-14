@@ -2,7 +2,7 @@
 
 /** User of the site. */
 
-const db = require("../db");
+const db = require('../db');
 
 class User {
   /** register new user -- returns

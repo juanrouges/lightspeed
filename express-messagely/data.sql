@@ -21,3 +21,6 @@ CREATE TABLE messages (
     sent_at timestamp with time zone NOT NULL,
     read_at timestamp with time zone
 );
+
+INSERT INTO users (username, password, first_name, last_name, phone, join_at)
+VALUES ('pipe', '12345', 'juan', 'rojas', '67890', '2023-06-14');
