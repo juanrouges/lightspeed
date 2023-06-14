@@ -1,14 +1,16 @@
 const express = require("express");
 const router = new express.Router();
 
-const users = [];
+const User = require("../models/user");
 
 /** GET / - get list of users.
  *
  * => {users: [{username, first_name, last_name, phone}, ...]}
  *
  **/
-router.get("/", function (req, res) {
+router.get("/", async function (req, res) {
+  const users = await User.all();
+
   return res.json(users);
 });
 

@@ -2,6 +2,8 @@
 
 /** User of the site. */
 
+const db = require("../db");
+
 class User {
   /** register new user -- returns
    *    {username, password, first_name, last_name, phone}
