@@ -1,5 +1,5 @@
-const db = require("../db");
-const expressError = require("../expressError");
+const db = require('../db');
+const expressError = require('../expressError');
 
 /** User class for message.ly */
 
@@ -46,6 +46,12 @@ class User {
     const result = await db.query(`SELECT * FROM users WHERE username = $1`, [
       username,
     ]);
+
+    console.log(result.rows.length);
+
+    if (result.rows.length == 0) {
+      return new expressError("User doesn't exist", 404);
+    }
 
     return result.rows[0];
   }
