@@ -1,8 +1,9 @@
+const db = require("../db");
+const expressError = require("../expressError");
+
 /** User class for message.ly */
 
 /** User of the site. */
-
-const db = require('../db');
 
 class User {
   /** register new user -- returns
@@ -41,7 +42,13 @@ class User {
    *          join_at,
    *          last_login_at } */
 
-  static async get(username) {}
+  static async get(username) {
+    const result = await db.query(`SELECT * FROM users WHERE username = $1`, [
+      username,
+    ]);
+
+    return result.rows[0];
+  }
 
   /** Return messages from this user.
    *

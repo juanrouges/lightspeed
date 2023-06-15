@@ -24,3 +24,6 @@ CREATE TABLE messages (
 
 INSERT INTO users (username, password, first_name, last_name, phone, join_at)
 VALUES ('pipe', '12345', 'juan', 'rojas', '67890', '2023-06-14');
+
+INSERT INTO users (username, password, first_name, last_name, phone, join_at)
+VALUES ('marti', '54321', 'martina', 'rojas-alvarado', '78746', '2023-06-14');
