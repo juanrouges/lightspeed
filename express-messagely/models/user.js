@@ -39,7 +39,7 @@ class User {
   static async all() {
     const users = await db.query(
       `SELECT 
-      username, first_name, last_name, phone 
+      username, first_name, last_name, phone, join_at 
       FROM users
     `
     );
@@ -59,8 +59,6 @@ class User {
     const result = await db.query(`SELECT * FROM users WHERE username = $1`, [
       username,
     ]);
-
-    console.log(result.rows.length);
 
     if (result.rows.length == 0) {
       return new expressError("User doesn't exist", 404);

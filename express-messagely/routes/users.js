@@ -8,10 +8,14 @@ const User = require("../models/user");
  * => {users: [{username, first_name, last_name, phone}, ...]}
  *
  **/
-router.get("/", async function (req, res) {
-  const users = await User.all();
+router.get("/", async function (req, res, next) {
+  try {
+    const users = await User.all();
 
-  return res.json(users);
+    return res.json(users);
+  } catch (err) {
+    return next(err);
+  }
 });
 
 /** GET /:username - get detail of users.
@@ -19,10 +23,14 @@ router.get("/", async function (req, res) {
  * => {user: {username, first_name, last_name, phone, join_at, last_login_at}}
  *
  **/
-router.get("/:username", async function (req, res) {
-  const foundUser = await User.get(req.params.username);
+router.get("/:username", async function (req, res, next) {
+  try {
+    const foundUser = await User.get(req.params.username);
 
-  return res.json(foundUser);
+    return res.json(foundUser);
+  } catch (err) {
+    return next(err);
+  }
 });
 
 /** GET /:username/to - get messages to user

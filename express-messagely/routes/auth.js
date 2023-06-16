@@ -15,18 +15,22 @@ const User = require("../models/user");
  *
  *  Make sure to update their last-login!
  */
-router.post("/register", async function (req, res) {
-  const { username, password, first_name, last_name, phone } = req.body;
+router.post("/register", async function (req, res, next) {
+  try {
+    const { username, password, first_name, last_name, phone } = req.body;
 
-  const register = await User.register(
-    username,
-    password,
-    first_name,
-    last_name,
-    phone
-  );
+    const register = await User.register(
+      username,
+      password,
+      first_name,
+      last_name,
+      phone
+    );
 
-  return res.json(register);
+    return res.json(register);
+  } catch (err) {
+    return next(err);
+  }
 });
 
 module.exports = router;
