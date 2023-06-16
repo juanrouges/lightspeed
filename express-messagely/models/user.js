@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt');
-const db = require('../db');
-const expressError = require('../expressError');
-const { BCRYPT_WORK_FACTOR } = require('../config');
+const bcrypt = require("bcrypt");
+const db = require("../db");
+const expressError = require("../expressError");
+const { BCRYPT_WORK_FACTOR } = require("../config");
 /** User class for message.ly */
 
 /** User of the site. */
@@ -11,12 +11,18 @@ class User {
    *    {username, password, first_name, last_name, phone}
    */
 
-  static async register({ username, password, first_name, last_name, phone }) {
-    const test = arguments;
+  static async register(username, password, first_name, last_name, phone) {
+    const hashedPass = await bcrypt.hash(password, BCRYPT_WORK_FACTOR);
 
-    console.log(test);
+    const joinAt = new Date();
 
-    return users.rows;
+    const userToRegister = await db.query(
+      `INSERT INTO users (username, password, first_name, last_name, phone, join_at) 
+      VALUES ($1, $2, $3, $4, $5, $6)`,
+      [username, hashedPass, first_name, last_name, phone, joinAt]
+    );
+
+    return userToRegister.rows[0];
   }
 
   /** Authenticate: is this username/password valid? Returns boolean. */

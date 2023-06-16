@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = new express.Router();
 
-const User = require('../models/user');
+const User = require("../models/user");
 
 /** POST /login - login: {username, password} => {token}
  *
@@ -15,7 +15,7 @@ const User = require('../models/user');
  *
  *  Make sure to update their last-login!
  */
-router.post('/register', async function (req, res) {
+router.post("/register", async function (req, res) {
   const { username, password, first_name, last_name, phone } = req.body;
 
   const register = await User.register(
@@ -26,9 +26,7 @@ router.post('/register', async function (req, res) {
     phone
   );
 
-  console.log(register);
-
-  return res.json({ username: username });
+  return res.json(register);
 });
 
 module.exports = router;
