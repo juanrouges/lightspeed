@@ -1,7 +1,7 @@
-const bcrypt = require("bcrypt");
-const db = require("../db");
-const expressError = require("../expressError");
-const { BCRYPT_WORK_FACTOR } = require("../config");
+const bcrypt = require('bcrypt');
+const db = require('../db');
+const expressError = require('../expressError');
+const { BCRYPT_WORK_FACTOR } = require('../config');
 /** User class for message.ly */
 
 /** User of the site. */
@@ -12,6 +12,18 @@ class User {
    */
 
   static async register(username, password, first_name, last_name, phone) {
+    const usernameExists = await db.query(
+      `SELECT username FROM users WHERE username = $1`,
+      [username]
+    );
+
+    if (usernameExists) {
+      return new expressError(
+        'Username already exist, please try another',
+        409
+      );
+    }
+
     const hashedPass = await bcrypt.hash(password, BCRYPT_WORK_FACTOR);
 
     const joinAt = new Date();
