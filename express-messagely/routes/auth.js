@@ -9,11 +9,15 @@ const User = require('../models/user');
  *
  **/
 router.post('/login', async function (req, res, next) {
-  const { username, password } = req.body;
+  try {
+    const { username, password } = req.body;
 
-  const userExists = await User.authenticate(username);
+    const userExists = await User.authenticate(username);
 
-  return res.json({ user: userExists });
+    return res.json({ user: userExists });
+  } catch (err) {
+    return next(err);
+  }
 });
 
 /** POST /register - register user: registers, logs in, and returns token.

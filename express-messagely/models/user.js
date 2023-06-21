@@ -48,7 +48,7 @@ class User {
     if (user.rows[0]) {
       return true;
     } else {
-      return false;
+      return new expressError('Wrong password or username', 404);
     }
 
     // if (user) {
