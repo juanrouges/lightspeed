@@ -1,18 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = new express.Router();
 
-const User = require('../models/user');
+const User = require("../models/user");
 
 /** POST /login - login: {username, password} => {token}
  *
  * Make sure to update their last-login!
  *
  **/
-router.post('/login', async function (req, res, next) {
+router.post("/login", async function (req, res, next) {
   try {
     const { username, password } = req.body;
 
-    const userExists = await User.authenticate(username);
+    const userExists = await User.authenticate(username, password);
 
     return res.json({ user: userExists });
   } catch (err) {
@@ -26,7 +26,7 @@ router.post('/login', async function (req, res, next) {
  *
  *  Make sure to update their last-login!
  */
-router.post('/register', async function (req, res, next) {
+router.post("/register", async function (req, res, next) {
   try {
     const { username, password, first_name, last_name, phone } = req.body;
 

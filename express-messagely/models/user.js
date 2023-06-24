@@ -1,7 +1,8 @@
-const bcrypt = require('bcrypt');
-const db = require('../db');
-const expressError = require('../expressError');
-const { BCRYPT_WORK_FACTOR } = require('../config');
+const bcrypt = require("bcrypt");
+const db = require("../db");
+const expressError = require("../expressError");
+const { BCRYPT_WORK_FACTOR, SECRET_KEY } = require("../config");
+const jwt = require("jsonwebtoken");
 /** User class for message.ly */
 
 /** User of the site. */
@@ -17,9 +18,9 @@ class User {
       [username]
     );
 
-    if (usernameExists) {
+    if (usernameExists.rows[0]) {
       return new expressError(
-        'Username already exist, please try another',
+        "Username already exist, please try another",
         409
       );
     }
@@ -30,7 +31,8 @@ class User {
 
     const userToRegister = await db.query(
       `INSERT INTO users (username, password, first_name, last_name, phone, join_at) 
-      VALUES ($1, $2, $3, $4, $5, $6)`,
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING username`,
       [username, hashedPass, first_name, last_name, phone, joinAt]
     );
 
@@ -46,14 +48,17 @@ class User {
     );
 
     if (user.rows[0]) {
-      return true;
-    } else {
-      return new expressError('Wrong password or username', 404);
-    }
+      const passMatch = await bcrypt.compare(password, user.rows[0].password);
 
-    // if (user) {
-    //   const passValidation = bcrypt.compare(password, user.password)
-    // }
+      if (passMatch === true) {
+        let token = jwt.sign({ username }, SECRET_KEY);
+
+        return token;
+      }
+      throw new expressError("Invalid user/password", 400);
+    } else {
+      return new expressError("Wrong password or username", 400);
+    }
   }
 
   /** Update last_login_at for user */
