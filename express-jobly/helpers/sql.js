@@ -4,7 +4,7 @@ const { BadRequestError } = require("../expressError");
 
 /**
  * dataToUpdate = request data to be change
- * jsToSql = sql keys
+ * jsToSql = sql key map js format to sql format
  **/
 
 function sqlForPartialUpdate(dataToUpdate, jsToSql) {
@@ -29,7 +29,11 @@ function sqlForPartialUpdate(dataToUpdate, jsToSql) {
   );
   console.log(keys.map((colName, idx) => console.log("COL NAME", colName)));
 
-  console.log("COLS", cols);
+  console.log("COLS", cols.join(", "));
+  // COLS "first_name"=$1, "last_name"=$2
+
+  console.log("VALUES", Object.values(dataToUpdate));
+  // VALUES [ 'Colin', 'Wood' ]
 
   return {
     setCols: cols.join(", "),
