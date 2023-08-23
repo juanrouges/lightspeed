@@ -178,6 +178,8 @@ class User {
                                 last_name AS "lastName",
                                 email,
                                 is_admin AS "isAdmin"`;
+
+    // Why username at the end
     const result = await db.query(querySql, [...values, username]);
     const user = result.rows[0];
 
